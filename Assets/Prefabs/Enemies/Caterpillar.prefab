@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5208613598841741446}
   - component: {fileID: 2981008567640842843}
   - component: {fileID: 528748551664255357}
+  - component: {fileID: -5229652021906430348}
+  - component: {fileID: -7977012299188420708}
   m_Layer: 0
   m_Name: Caterpillar
   m_TagString: Untagged
@@ -102,3 +104,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5229652021906430348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669040074115637534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b596539b68df7448bcdf7426e72a79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _speed: 0
+--- !u!114 &-7977012299188420708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669040074115637534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791338779dc07594ea31b86893865416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

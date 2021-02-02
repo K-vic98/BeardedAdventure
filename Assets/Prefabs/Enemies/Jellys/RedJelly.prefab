@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3326652829822519819}
   - component: {fileID: 3783841571138370756}
   - component: {fileID: 393972915069628464}
+  - component: {fileID: -382688524033402242}
+  - component: {fileID: -2909146325709882160}
   m_Layer: 0
   m_Name: RedJelly
   m_TagString: Untagged
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -6640614073646168285, guid: 4a9aae8035f6ef24d9b06ac3990dbf32,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.875, y: 0.875}
@@ -102,3 +104,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-382688524033402242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280484346947195843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b596539b68df7448bcdf7426e72a79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _speed: 0
+--- !u!114 &-2909146325709882160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280484346947195843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791338779dc07594ea31b86893865416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

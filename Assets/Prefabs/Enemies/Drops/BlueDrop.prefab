@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3620353754275884780}
   - component: {fileID: 7466030885035285808}
   - component: {fileID: 4775913241066606499}
+  - component: {fileID: 9062695051952770001}
+  - component: {fileID: 5409582551262818386}
   m_Layer: 0
   m_Name: BlueDrop
   m_TagString: Untagged
@@ -102,3 +104,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9062695051952770001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645489405759616661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b596539b68df7448bcdf7426e72a79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _speed: 0
+--- !u!114 &5409582551262818386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645489405759616661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791338779dc07594ea31b86893865416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

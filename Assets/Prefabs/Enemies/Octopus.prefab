@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4571827050486265770}
   - component: {fileID: 7578191024517518558}
   - component: {fileID: 6095180218827751170}
+  - component: {fileID: 1676750194363260484}
+  - component: {fileID: 2894628404719092667}
   m_Layer: 0
   m_Name: Octopus
   m_TagString: Untagged
@@ -102,3 +104,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1676750194363260484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986666085655346178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b596539b68df7448bcdf7426e72a79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _speed: 0
+--- !u!114 &2894628404719092667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986666085655346178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791338779dc07594ea31b86893865416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
