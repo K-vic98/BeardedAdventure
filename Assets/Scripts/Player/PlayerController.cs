@@ -2,29 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(Movement))]
 public class PlayerController : MonoBehaviour
 {
-    private PlayerMovement _player;
+    private Movement _player;
 
     private void Start()
     {
-        _player = GetComponent<PlayerMovement>();
+        _player = GetComponent<Movement>();
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            _player.MoveRight();
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            _player.MoveLeft();
-        }
+        _player.Move(Input.GetAxis("Horizontal"));
+
         if (Input.GetKeyDown(KeyCode.Space))
-        {
             _player.Jump();
-        }
     }
 }
