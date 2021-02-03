@@ -13,8 +13,7 @@ public class Movement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animatorController;
     private bool _isGround;
-    private readonly RaycastHit2D[] _results = new RaycastHit2D[1];
-
+    
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -40,13 +39,16 @@ public class Movement : MonoBehaviour
 
     public void Jump()
     {
-        _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-        _animatorController.SetTrigger("Jump");
+        if (_isGround) 
+        {
+            _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+            _animatorController.SetTrigger("Jump");
+        }
     }
 
     private bool CheckLandAvailability()
     {
-        var collisionCount = _rigidbody.Cast(-transform.up, _results, _castDistance);
-        return collisionCount > 0 ? true : false;
+        RaycastHit2D _hit = Physics2D.Raycast(transform.position, Vector2.down, _castDistance);
+        return _hit;
     }
 }
