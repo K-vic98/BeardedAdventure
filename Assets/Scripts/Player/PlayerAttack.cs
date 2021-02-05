@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+[RequireComponent(typeof(Animator))]
+public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject _weapon;
     [SerializeField] float _duration;
@@ -10,10 +11,16 @@ public class Attack : MonoBehaviour
     [SerializeField] float _scrollingForce;
 
     private GameObject boomerangInFlight;
+    private Animator _animatorController;
     private Vector2 _diretion;
     private float _runningTime;
     private bool _isTrow;
-   
+
+    private void Start()
+    {
+        _animatorController = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (_isTrow)
@@ -28,6 +35,8 @@ public class Attack : MonoBehaviour
             {
                 Vector3 difference = _weapon.transform.position - boomerangInFlight.transform.position;
                 boomerangInFlight.transform.position += new Vector3(difference.x * _force * Time.deltaTime, difference.y * _force * Time.deltaTime, 0);
+                if (difference.magnitude <= 0.2)
+                    _runningTime = _duration;
             }
             if (_runningTime >= _duration)
             {
@@ -35,6 +44,7 @@ public class Attack : MonoBehaviour
                 _weapon.SetActive(true);
                 _runningTime = 0;
                 _isTrow = false;
+                _animatorController.SetBool("isTrow", false);
             }
         }
     }
@@ -49,5 +59,6 @@ public class Attack : MonoBehaviour
         _weapon.SetActive(false);
         _diretion = diretion;
         _isTrow = true;
+        _animatorController.SetBool("isTrow", true);
     }
 }

@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 1113973074273926583}
   - component: {fileID: 4596062521502297529}
   - component: {fileID: 4672446669654095265}
+  - component: {fileID: 7843620278149909742}
   - component: {fileID: 5503144780171807364}
   - component: {fileID: 2905419460988745559}
-  - component: {fileID: 7243519309096920357}
+  - component: {fileID: 6801952363095780035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -231,12 +232,24 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7843620278149909742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113973074273926582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a52d66d6ca860e42a831590a8db83fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5503144780171807364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,10 +274,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ee1f60d2a89af48ae42bb8d99f80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  _jumpForce: 6
+  _speed: 7
+  _jumpForce: 13
   _castDistance: 1
---- !u!114 &7243519309096920357
+  _contactFilter:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &6801952363095780035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,13 +289,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1113973074273926582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e91fc24ce1969bc4ea3db116705bdf9f, type: 3}
+  m_Script: {fileID: 11500000, guid: a769a81e099b0aa4ab8788875a28e9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 1044882073859176477}
-  _duration: 2
-  _force: 20
-  _scrollingForce: 400
+  _duration: 3
+  _force: 10
+  _scrollingForce: 500
 --- !u!1 &8170559295453321918
 GameObject:
   m_ObjectHideFlags: 0
