@@ -11,15 +11,13 @@ public class BGParallax : MonoBehaviour
     private Vector3 _anchorPointStartPos;
     private SpriteRenderer _spriteRenderer;
     
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _anchorPointStartPos = _trackObj.transform.position;
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Vector3 distanceFromOriginToTrack = _trackObj.transform.position - _anchorPointStartPos;
         Vector2 shift = distanceFromOriginToTrack * _mult;
