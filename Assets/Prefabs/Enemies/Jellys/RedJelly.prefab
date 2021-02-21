@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 3783841571138370756}
   - component: {fileID: 393972915069628464}
   - component: {fileID: 1692838766934284812}
-  - component: {fileID: -4373950809385522185}
-  - component: {fileID: -382688524033402242}
   - component: {fileID: -2909146325709882160}
+  - component: {fileID: -8201220520005418962}
   m_Layer: 0
   m_Name: RedJelly
   m_TagString: Untagged
@@ -132,32 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.75}
   m_EdgeRadius: 0
---- !u!114 &-4373950809385522185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280484346947195843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03540a1b57b2a294fbbda358a0be331d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-382688524033402242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280484346947195843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b596539b68df7448bcdf7426e72a79e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _path: {fileID: 0}
-  _speed: 0
 --- !u!114 &-2909146325709882160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791338779dc07594ea31b86893865416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8201220520005418962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280484346947195843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a03d402219933843b6437016da0ad13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _speed: 0

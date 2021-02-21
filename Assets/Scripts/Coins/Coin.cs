@@ -5,17 +5,14 @@ using UnityEngine.Events;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private int _numberOfScore;
+    [SerializeField] private uint _numberOfScore;
 
-    public event UnityAction<int> CoinWasPickedUp;
+    public event UnityAction<uint> CoinWasPickedUp;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
-            //Inventory.instance.AddPoints((uint)_numberOfScore);
-            //Inventory gono = new Inventory();
-            //Inventory.huys
             CoinWasPickedUp?.Invoke(_numberOfScore);
             gameObject.SetActive(false);
         }

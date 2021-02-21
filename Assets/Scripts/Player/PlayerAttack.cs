@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] GameObject _weapon;
-    [SerializeField] float _duration;
-    [SerializeField] float _force;
-    [SerializeField] float _scrollingForce;
+    [SerializeField] private GameObject _weapon;
+    [SerializeField] private float _duration;
+    [SerializeField] private float _force;
+    [SerializeField] private float _scrollingForce;
 
     private GameObject boomerangInFlight;
     private Animator _animatorController;

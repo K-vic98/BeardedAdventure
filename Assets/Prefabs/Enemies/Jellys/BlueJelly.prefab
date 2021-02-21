@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 543160039692312453}
   - component: {fileID: 7170223992668290992}
   - component: {fileID: 7923364039907989308}
-  - component: {fileID: 4025009677211359918}
-  - component: {fileID: 4056538379206521456}
   - component: {fileID: -6762473729999646160}
+  - component: {fileID: 178544066929954876}
   m_Layer: 0
   m_Name: BlueJelly
   m_TagString: Untagged
@@ -132,32 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.75}
   m_EdgeRadius: 0
---- !u!114 &4025009677211359918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5087433928821838547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03540a1b57b2a294fbbda358a0be331d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4056538379206521456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5087433928821838547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b596539b68df7448bcdf7426e72a79e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _path: {fileID: 0}
-  _speed: 0
 --- !u!114 &-6762473729999646160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791338779dc07594ea31b86893865416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &178544066929954876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087433928821838547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a03d402219933843b6437016da0ad13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _speed: 0

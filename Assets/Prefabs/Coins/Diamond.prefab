@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2898232689251573689}
   - component: {fileID: 9095384495414046023}
   - component: {fileID: 3770009529497840789}
-  - component: {fileID: 4733579310111737066}
-  - component: {fileID: 3695438439807150048}
+  - component: {fileID: 4123451025163504328}
+  - component: {fileID: 3250378267244599630}
+  - component: {fileID: 8579229596281831776}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Untagged
@@ -111,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8760085, y: 0.8737688}
   m_EdgeRadius: 0
---- !u!114 &4733579310111737066
+--- !u!114 &4123451025163504328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,11 +121,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1712149835140857372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a0fa08944b9a24d89014e50ed2728b, type: 3}
+  m_Script: {fileID: 11500000, guid: 946add8875f7c524d995787f29b918b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _numberOfScore: 100
---- !u!114 &3695438439807150048
+--- !u!114 &3250378267244599630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712149835140857372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e3bc614221954499f7a65d4d5aa74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+  _numberOfPoints: 0.1
+--- !u!114 &8579229596281831776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

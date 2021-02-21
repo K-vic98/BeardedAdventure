@@ -5,13 +5,11 @@ using UnityEngine.Events;
 
 public class Diamond : MonoBehaviour
 {
-    [SerializeField] private FinalLadder _finalLadder;
-    
+    public event UnityAction DiamondWasPickedUp;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Player>(out Player player))
-        {
-            _finalLadder.gameObject.SetActive(true);
-        }
+            DiamondWasPickedUp?.Invoke();
     }
 }
