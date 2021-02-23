@@ -68,4 +68,9 @@ public class DialogueWindow : MonoBehaviour
     {
         _canvasGroup.alpha = 1;
     }
+
+    public void MakeDialogUnvibisible()
+    {
+        _canvasGroup.alpha = 0;
+    }
 }

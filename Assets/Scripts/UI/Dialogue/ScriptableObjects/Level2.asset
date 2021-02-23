@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49840a7c04b6e6c418da3ba9fd189096, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  _icon: {fileID: -5645979497368462530, guid: 95f0df9587fe19049859df078fe1a4fd, type: 3}
-  _text: James, in the next cave, beware of the thorns
+  _icon: {fileID: 6326869055623557553, guid: 95f0df9587fe19049859df078fe1a4fd, type: 3}
+  _text: Do not forget to collect treasures from secret caves!

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NoLevel
   m_EditorClassIdentifier: 
   _icon: {fileID: -5645979497368462530, guid: 95f0df9587fe19049859df078fe1a4fd, type: 3}
-  _text: Our radars do not show new caves yet
+  _text: Radars do not show new caves yet

@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
-    [SerializeField] private float _castDistance;
+    [SerializeField] private float _groundCastDistance;
+    [SerializeField] private float _obstacleCastDistance;
     [SerializeField] private LayerMask _contactFilter;
 
     private Rigidbody2D _rigidbody;
@@ -16,11 +17,14 @@ public class PlayerMovement : MonoBehaviour
     private bool _isGround;
     private bool _onStairs;
     private float _gravityScale;
+    private RaycastHit2D[] _hits = new RaycastHit2D[1];
+    private ContactFilter2D _contactFilter2D;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<Animator>();
+        _contactFilter2D.SetLayerMask(_contactFilter);
     }
 
     private void FixedUpdate()
@@ -63,14 +67,12 @@ public class PlayerMovement : MonoBehaviour
         t.x = Mathf.Clamp(t.x, -1, 1);
         t.y = Mathf.Clamp(t.y, -1, 1);
         if (!_onStairs)
-        {
             t.y = 0;
-        }
-        transform.Translate(t* (_speed * Time.deltaTime), Space.World);
+        var collisionCount = _rigidbody.Cast(t, _contactFilter2D, _hits, _obstacleCastDistance);
+        if (collisionCount == 0)
+            transform.Translate(t * (_speed * Time.deltaTime), Space.World);
         if (t.x != 0)
-        {
             transform.localScale = new Vector2(Mathf.Sign(t.x), transform.localScale.y);
-        }
         _animatorController.SetFloat("tx", t.x);
     }
 
@@ -91,6 +93,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool CheckLandAvailability()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, _castDistance, _contactFilter);
+        return Physics2D.Raycast(transform.position, Vector2.down, _groundCastDistance, _contactFilter);
     }
 }

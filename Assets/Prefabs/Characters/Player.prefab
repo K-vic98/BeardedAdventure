@@ -263,7 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 7
   _jumpForce: 16.2
-  _castDistance: 1
+  _groundCastDistance: 0.2
+  _obstacleCastDistance: 0.1
   _contactFilter:
     serializedVersion: 2
     m_Bits: 256
