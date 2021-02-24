@@ -826,22 +826,22 @@ PrefabInstance:
     - target: {fileID: 2972734149948880369, guid: 6b4deb634d01c0442ad1f974086ea70e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1226.7615
+      value: 1234.349
       objectReference: {fileID: 0}
     - target: {fileID: 2972734149948880369, guid: 6b4deb634d01c0442ad1f974086ea70e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 914.2085
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 2972734149948880369, guid: 6b4deb634d01c0442ad1f974086ea70e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -108.31
+      value: -108.5
       objectReference: {fileID: 0}
     - target: {fileID: 2972734149948880369, guid: 6b4deb634d01c0442ad1f974086ea70e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.98
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2972734149948880369, guid: 6b4deb634d01c0442ad1f974086ea70e,
         type: 3}
@@ -898,7 +898,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 552e18ae0cdf83d4b8969e6119b4331e, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2972734149948880383, guid: 6b4deb634d01c0442ad1f974086ea70e, type: 3}
+    - {fileID: 3242895409747949624, guid: 6b4deb634d01c0442ad1f974086ea70e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b4deb634d01c0442ad1f974086ea70e, type: 3}
 --- !u!4 &140541333 stripped
 Transform:
@@ -12372,7 +12374,7 @@ PrefabInstance:
     - target: {fileID: 2972734149948880369, guid: 6b4deb634d01c0442ad1f974086ea70e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.548
+      value: 57.29
       objectReference: {fileID: 0}
     - target: {fileID: 2972734149948880369, guid: 6b4deb634d01c0442ad1f974086ea70e,
         type: 3}
@@ -17970,7 +17972,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.55
+  m_fontSize: 63.5
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -23804,7 +23806,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d3774a91af9b3e4a8d53c5985894629, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
