@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Game : MonoBehaviour
 {
-    [Header("Player")]
-    [SerializeField] private Player _trackedPlayer;
-    [SerializeField] private Player _playerPrefab;
-    [Header("Levels")]
+    [SerializeField] private Player _player;
     [SerializeField] private GameObject _levels;
 
     private Level[] _arrayOfLevels;
@@ -29,7 +27,6 @@ public class Game : MonoBehaviour
     private uint _gameScore;
 
     public event UnityAction<uint> NumberOfScoreChanged;
-    public event UnityAction<Player> PlayerBornOnLevel;
 
     private void Awake()
     {
@@ -42,17 +39,36 @@ public class Game : MonoBehaviour
         UnsubscribeFromEvents();
     }
 
-    private void GoToNextLevel()
+    private void SubscribeToEvents()
     {
-        IncreaseLevelNumber();
-        SetGameValues();
+        _player.PlayerDied += OnPlayerDied;
+        foreach (var coin in _arrayOfCoins)
+        {
+            coin.CoinWasPickedUp += OnCoinWasPickedUp;
+        }
+        _portalTransmitter.PlayerTeleportedToSpaceShip += RestartLevel;
+        _portalTransmitter.PlayerTeleportedToSpaceShip += GoToNextLevel;
+        _portalTransmitter.PlayerTeleportedToSpaceShip += FreeseNumberOfScore;
     }
 
-    private void IncreaseLevelNumber()
+    private void UnsubscribeFromEvents()
+    {
+        _player.PlayerDied -= OnPlayerDied;
+        foreach (var coin in _arrayOfCoins)
+        {
+            coin.CoinWasPickedUp -= OnCoinWasPickedUp;
+        }
+        _portalTransmitter.PlayerTeleportedToSpaceShip -= RestartLevel;
+        _portalTransmitter.PlayerTeleportedToSpaceShip -= GoToNextLevel;
+        _portalTransmitter.PlayerTeleportedToSpaceShip -= FreeseNumberOfScore;
+    }
+
+    private void GoToNextLevel()
     {
         _numderOfLevel += 1;
         if (_numderOfLevel == _arrayOfLevels.Length)
             _numderOfLevel = 0;
+        SetGameValues();
     }
 
     private void SetGameValues()
@@ -82,15 +98,18 @@ public class Game : MonoBehaviour
     
     private void OnPlayerDied()
     {
-        _trackedPlayer.PlayerDied -= OnPlayerDied;
-        Destroy(_trackedPlayer.gameObject);
+        StartCoroutine(RebornPlayer());
         RestartLevel();
         _levelscore = _gameScore;
         NumberOfScoreChanged?.Invoke(_levelscore);
-        _trackedPlayer = Instantiate(_playerPrefab, _receivingPortal.transform.position, Quaternion.identity);
-        PlayerBornOnLevel?.Invoke(_trackedPlayer);
-        _trackedPlayer.PlayerDied += OnPlayerDied;
     }
+
+    private IEnumerator RebornPlayer()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _player.transform.position = new Vector2(_receivingPortal.transform.position.x, _receivingPortal.transform.position.y);
+    }
+
 
     private void RestartLevel()
     {
@@ -134,29 +153,5 @@ public class Game : MonoBehaviour
     private void FreeseNumberOfScore()
     {
         _gameScore = _levelscore;
-    }
-
-    private void SubscribeToEvents()
-    {
-        _trackedPlayer.PlayerDied += OnPlayerDied;
-        foreach (var coin in _arrayOfCoins)
-        {
-            coin.CoinWasPickedUp += OnCoinWasPickedUp;
-        }
-        _portalTransmitter.PlayerTeleportedToSpaceShip += RestartLevel;
-        _portalTransmitter.PlayerTeleportedToSpaceShip += GoToNextLevel;
-        _portalTransmitter.PlayerTeleportedToSpaceShip += FreeseNumberOfScore;
-    }
-
-    private void UnsubscribeFromEvents()
-    {
-        _trackedPlayer.PlayerDied -= OnPlayerDied;
-        foreach (var coin in _arrayOfCoins)
-        {
-            coin.CoinWasPickedUp -= OnCoinWasPickedUp;
-        }
-        _portalTransmitter.PlayerTeleportedToSpaceShip -= RestartLevel;
-        _portalTransmitter.PlayerTeleportedToSpaceShip -= GoToNextLevel;
-        _portalTransmitter.PlayerTeleportedToSpaceShip -= FreeseNumberOfScore;
     }
 }

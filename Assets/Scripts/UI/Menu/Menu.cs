@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class Menu : MonoBehaviour
 {
     private CanvasGroup _canvasGroup;

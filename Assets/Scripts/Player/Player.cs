@@ -4,39 +4,29 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(PlayerMovement))]
-//[RequireComponent(typeof(PlayerAttack))]
 public class Player : MonoBehaviour
 {
-    private PlayerMovement _movement;
-    //private PlayerAttack _attack;
+    private PlayerMovement _playerMovement;
 
     public event UnityAction PlayerDied;
 
     private void Start()
     {
-        _movement = GetComponent<PlayerMovement>();
-        //_attack = GetComponent<PlayerAttack>();
+        _playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
-        _movement.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
-
+        _playerMovement.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
         if (Input.GetKeyDown(KeyCode.Space))
-            _movement.Jump();
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Vector3 screenPosDepth = Input.mousePosition;
-        //    screenPosDepth.z = 5.0f;
-        //    _attack.Throw(Camera.main.ScreenToWorldPoint(screenPosDepth));
-        //}
+            _playerMovement.Jump();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Enemy>(out Enemy enemy) || collision.TryGetComponent<Lava>(out Lava lava) || collision.TryGetComponent<Spike>(out Spike spike))
+        if (collision.TryGetComponent<Enemy>(out Enemy enemy) || collision.TryGetComponent<Lava>(out Lava lava) || collision.TryGetComponent<Spike>(out Spike spike) || collision.TryGetComponent<Bullet>(out Bullet bullet))
         {
             PlayerDied?.Invoke();
-        }     
+        }
     }
 }

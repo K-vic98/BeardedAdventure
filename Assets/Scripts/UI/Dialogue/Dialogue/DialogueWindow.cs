@@ -14,6 +14,7 @@ public class DialogueWindow : MonoBehaviour
     [SerializeField] private Dialogue[] _dialogues;
     [Header("DefaultDialogue")]
     [SerializeField] private Dialogue _defaultDialogue;
+    [Header("Data will display")]
     [SerializeField] private Image _icon;
     [SerializeField] private TMP_Text _text;
 

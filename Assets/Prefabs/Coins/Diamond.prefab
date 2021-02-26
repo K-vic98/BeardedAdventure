@@ -125,6 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberOfScore: 100
+  _effect: {fileID: 106259005693796438, guid: a18b288d424221d4b9005f29996ee952, type: 3}
+  _audioEffect: {fileID: 7156910422618115226, guid: a5365d16385fb74429fbfbe107db0a64,
+    type: 3}
 --- !u!114 &3250378267244599630
 MonoBehaviour:
   m_ObjectHideFlags: 0

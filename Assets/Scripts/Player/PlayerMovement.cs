@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
@@ -11,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _groundCastDistance;
     [SerializeField] private float _obstacleCastDistance;
     [SerializeField] private LayerMask _contactFilter;
-
+    
     private Rigidbody2D _rigidbody;
     private Animator _animatorController;
     private bool _isGround;
@@ -19,9 +20,11 @@ public class PlayerMovement : MonoBehaviour
     private float _gravityScale;
     private RaycastHit2D[] _hits = new RaycastHit2D[1];
     private ContactFilter2D _contactFilter2D;
+    private AudioSource _jumpAudioEffect;
 
     private void Start()
     {
+        _jumpAudioEffect = gameObject.GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<Animator>();
         _contactFilter2D.SetLayerMask(_contactFilter);
@@ -62,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private bool CheckLandAvailability()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.down, _groundCastDistance, _contactFilter);
+    }
+
     public void Move(Vector2 t)
     {
         t.x = Mathf.Clamp(t.x, -1, 1);
@@ -76,23 +84,20 @@ public class PlayerMovement : MonoBehaviour
         _animatorController.SetFloat("tx", t.x);
     }
 
-    public void ClimbStairs()
-    {
-        if (_onStairs)
-            transform.Translate(new Vector2(0, 10) * (_speed * Time.deltaTime), Space.World);
-    }
-
     public void Jump()
     {
-        if (_isGround) 
+        if (_isGround)
         {
             _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+            _jumpAudioEffect.pitch = Random.Range(0.5f, 1.5f);
+            _jumpAudioEffect.Play();
             _animatorController.SetTrigger("Jump");
         }
     }
 
-    private bool CheckLandAvailability()
+    public void ClimbStairs()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, _groundCastDistance, _contactFilter);
+        if (_onStairs)
+            transform.Translate(new Vector2(0, 10) * (_speed * Time.deltaTime), Space.World);
     }
 }

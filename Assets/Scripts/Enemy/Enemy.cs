@@ -5,15 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(LevelPatrolling))]
 public class Enemy : MonoBehaviour
 {
-    private LevelPatrolling  _levelPatrolling;
+    private LevelPatrolling  _enemyMovement;
 
     private void Start()
     {
-        _levelPatrolling = GetComponent<LevelPatrolling >();
+        _enemyMovement = GetComponent<LevelPatrolling >();
     }
 
     private void Update()
     {
-        _levelPatrolling.MoveToPoint();
+        _enemyMovement.MoveToPoint();
     }
 }

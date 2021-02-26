@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7069635733321874289}
   - component: {fileID: 6980517912608513080}
   m_Layer: 0
-  m_Name: Tilemap_179
+  m_Name: DialogueWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

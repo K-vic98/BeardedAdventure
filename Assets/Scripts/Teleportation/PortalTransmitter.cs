@@ -10,17 +10,23 @@ public class PortalTransmitter : MonoBehaviour
     private Player _player;
     private ReceivingPortal _currentPortal;
     private int _currentPortalNumber;
+    private AudioSource _audioEffect;
 
     public event UnityAction PlayerTeleportedToSpaceShip;
+
+    private void Start()
+    {
+        _audioEffect = gameObject.GetComponent<AudioSource>();    
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
+            _audioEffect.Play();
             _player = collision.GetComponent<Player>();
             _currentPortal = _portals[_currentPortalNumber];
             StartCoroutine(Teleport(_currentPortal));
-
             if (!gameObject.TryGetComponent<ShipPortal>(out ShipPortal shipPortal))
             {
                 PlayerTeleportedToSpaceShip?.Invoke();

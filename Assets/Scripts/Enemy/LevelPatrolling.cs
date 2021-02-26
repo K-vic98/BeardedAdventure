@@ -27,7 +27,6 @@ public class LevelPatrolling  : MonoBehaviour
         {
             _currentPoint++;
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-
             if (_currentPoint >= _points.Length)
                 _currentPoint = 0;
         }

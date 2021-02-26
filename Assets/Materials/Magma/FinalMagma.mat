@@ -29,4 +29,4 @@ Material:
     - _PixelationForce: 100
     m_Colors:
     - _FlowSpeed: {r: 2, g: 5, b: 0, a: 0}
-    - _RenderingBoundSize: {r: 2132.9954, g: 611.7786, b: 0, a: 0}
+    - _RenderingBoundSize: {r: 1277.5391, g: 644.81805, b: 0, a: 0}
