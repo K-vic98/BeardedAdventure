@@ -38,4 +38,4 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _FlowSpeed: {r: 1, g: 1, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RenderingBoundSize: {r: 104.46699, g: 71.2022, b: 0, a: 0}
+    - _RenderingBoundSize: {r: 1234.349, g: 800, b: 0, a: 0}
